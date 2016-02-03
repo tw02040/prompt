@@ -378,7 +378,7 @@
 			</ul>
 		</nav>-->
 		<div id="home">
-			<div class="object1-1"><img src="img/home_tri.png"></div>
+			<div class="object1-1"><img src="img/home_tri2.png"></div>
 			<div class="object1-2"></div>
 			<div class="object1-3"></div>
 		</div>
@@ -993,5 +993,18 @@
 			</div>
 		</div>
 	</div>
+	<script>
+			/**마우스 부드럽게 해당위치로 이동**/
+			$(function(){
+			   $('a[href^=#]').click(function() {
+				  var speed = 800;
+				  var href= $(this).attr("href");
+				  var target = $(href == "#" || href == "" ? 'html' : href);
+				  var position = target.offset().top;
+				  $('body,html').animate({scrollTop:position}, speed, 'swing');
+				  return false;
+			   });
+			});
+	</script>
 	</body>
 </html>
