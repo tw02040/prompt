@@ -166,27 +166,57 @@
 			}
 			#home {
 				/*background: #1D1D1D;*/
+				position: relative;
 				background: #1d1d1d;
 				margin: 0;
-				padding: 10px;
 			}
-			.object1-1 {
+			.home_tri {
+				position: relative;
 				text-align: center;
-				margin: 25px auto;
-            	width: 90%;
-            	max-width: 400px;
-	        }
-
-	        .object1-1 img{
+				margin: 0 auto;
             	width: 100%;
 	        }
 
-	        .object1-2 {
-	            background: url(img/object1-2.png) 0 0 no-repeat;
+	        .home_tri img{
+            	position: relative;
+            	width: 90%;
+	            z-index: 2;
 	        }
 
-	        .object1-3 {
-	            background: url(img/object1-3.png) 0 0 no-repeat;
+	        .tri_back1 {
+	            width: 60%;
+	            position: absolute;
+	            top: -5%;
+	            left: 0;
+	            z-index: 1;
+	        }
+
+	        .tri_back1 img{
+            	width: 100%;
+	        }
+
+	        .tri_back2 {
+	            width: 58%;
+	            position: absolute;
+	            top: 20%;
+	            right: 0;
+	            z-index: 1;
+	        }
+
+	        .tri_back2 img{
+            	width: 100%;
+	        }
+
+	        .tri_back3 {
+	            width: 55%;
+	            position: absolute;
+	            top: 73%;
+	            left: 17%;
+	            z-index: 1;
+	        }
+
+	        .tri_back3 img{
+            	width: 100%;
 	        }
 	        /* home */
 	        /* history */
@@ -378,9 +408,12 @@
 			</ul>
 		</nav>-->
 		<div id="home">
-			<div class="object1-1"><img src="img/home_tri.png"></div>
-			<div class="object1-2"></div>
-			<div class="object1-3"></div>
+			<div class="home_tri">
+				<div class="tri_back1"><img src="img/home_tri_back1.png"></div>
+				<div class="tri_back2"><img src="img/home_tri_back2.png"></div>
+				<div class="tri_back3"><img src="img/home_tri_back3.png"></div>
+				<img src="img/home_tri.png">
+			</div>
 		</div>
 		<div id="history">
 			<h1>History</h1>
