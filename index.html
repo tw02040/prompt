@@ -121,7 +121,7 @@
 				right:-260px;
 				top:0;
 				height:100%;
-				background:#454545;
+				background:#212121;
 				width:260px;
 				z-index: 1000;
 			}
@@ -135,8 +135,15 @@
 				background:#262626;
 			}
 			.sideMenu .list li{
-				height:53px;
+				margin: 0 20px;
+				height: 53px;
 				border-bottom:1px solid #2c2c2c;
+			}
+			.sideMenu .list li:first-child{
+				height:75px;
+				border-bottom:0;
+				text-align: center;
+				margin: 0;
 			}
 			.sideMenu .list li a{
 				height:52px;
@@ -146,6 +153,12 @@
 				border-bottom:1px solid #616161;
 				display:block;
 				padding-left:15px;
+			}
+			.sideMenu .list li img{
+				width: 150px;
+			}
+			.sideMenu .list li:first-child a{
+				border-bottom:0;
 			}
 			#slideRight .list li a{
 				padding-right:15px;
@@ -159,7 +172,6 @@
 			/* 네비게이션 */
 			/* home */
 			#top {
-				/*background: #1D1D1D;*/
 				background: #1d1d1d;
 			}
 			.logo {
@@ -167,7 +179,6 @@
 				margin: 10px;
 			}
 			#home {
-				/*background: #1D1D1D;*/
 				position: relative;
 				background: #1d1d1d;
 				margin: 0;
@@ -419,6 +430,7 @@
 			</div>
 			<div id="slideRight" class="sideMenu blind">
 			    <ul class="list">
+			    	<li><a href="#0"><img class="logo" src="img/logo.png"></a></li>
 				    <li><a href="#top">Home</a></li>
 					<li><a href="#history">History</a></li>
 					<li><a href="#portfolio">Portfolio</a></li>
@@ -427,7 +439,6 @@
 			</div>
 		<div id="top">
 			<img class="logo" src="img/logo.png">
-			<img src="">
 		</div>
 		<!--<nav>
 			<ul>
@@ -1051,8 +1062,8 @@
 				<div class="copyright">ⓒ2016.prompt,Inc. All right reserved.
 				</div>
 				<div class="company">
-					<a href=""><img src="img/footer_dlto.png"></a>
-					<a href=""><img src="img/footer_idun8.png"></a>
+					<a href="http://www.dlto.co.kr/"><img src="img/footer_dlto.png"></a>
+					<a href="http://idun8.com/"><img src="img/footer_idun8.png"></a>
 				</div>
 			</div>
 		</div>

@@ -36,19 +36,18 @@
 				width:100%; 
 				margin:0; 
 				padding:0;
-				min-width:320px;
 			}
 			.icMenu {
 				position: fixed;
 				right:0;
-				z-index.html: 10000;
+				z-index: 10000;
 			}
 			.nav{
 				height:52px;
 				overflow:hidden;
 				width:100%;
 				position: fixed;
-				z-index.html: 100;
+				z-index: 100;
 			}
 			.nav ul{
 				position:relative;
@@ -72,9 +71,9 @@
 				right:-260px;
 				top:0;
 				height:100%;
-				background:#454545;
+				background:#212121;
 				width:260px;
-				z-index.html: 1000;
+				z-index: 1000;
 			}
 			.sideMenu h2{
 				height:52px;
@@ -86,8 +85,15 @@
 				background:#262626;
 			}
 			.sideMenu .list li{
-				height:53px;
+				margin: 0 20px;
+				height: 53px;
 				border-bottom:1px solid #2c2c2c;
+			}
+			.sideMenu .list li:first-child{
+				height:75px;
+				border-bottom:0;
+				text-align: center;
+				margin: 20px 0 0;
 			}
 			.sideMenu .list li a{
 				height:52px;
@@ -97,6 +103,12 @@
 				border-bottom:1px solid #616161;
 				display:block;
 				padding-left:15px;
+			}
+			.sideMenu .list li img{
+				width: 150px;
+			}
+			.sideMenu .list li:first-child a{
+				border-bottom:0;
 			}
 			#slideRight .list li a{
 				padding-right:15px;
@@ -187,10 +199,11 @@
 			</div>
 			<div id="slideRight" class="sideMenu blind">
 			    <ul class="list">
-				    <li><a href="index.html?#top">Home</a></li>
-					<li><a href="index.html?#history">History</a></li>
-					<li><a href="index.html?#portfolio">Portfolio</a></li>
-					<li><a href="index.html?#contact">Contact</a></li>
+			    	<li><a href="#0"><img class="logo" src="img/logo.png"></a></li>
+				    <li><a href="index.html#top">Home</a></li>
+					<li><a href="index.html#history">History</a></li>
+					<li><a href="index.html#portfolio">Portfolio</a></li>
+					<li><a href="index.html#contact">Contact</a></li>
 			    </ul> 
 			</div>
 			<div class="explain">
