@@ -4,19 +4,49 @@
 		<title>prompt</title>
 		<meta charset="ut f-8">
 		<meta name="viewport" content="initial-scale=1,width=device-width"/>
-		<script src="http://code.jquery.com/jquery-1.9.1.min.js">
-		</script>
-		<!-- 메뉴-->
+		
 		<script type="text/javascript" language="javascript" src="http://code.jquery.com/jquery-1.8.2.min.js">
 		</script>
 		<!-- 히스토리 슬라이드 -->
 		<script src="js/jquery.slides.min.js">
 		</script>
 		<script>
+			window.addEventListener('hashchange', function(evt) {
+				var type = window.location.hash.replace('#', '');
+				$('.pfcontents .collection li').hide();
+				if (type == 'showAll') {
+					$('.pfcontents .collection li').show();					
+				} else {
+					$('.pfcontents .collection li').hide();
+					$('.pfcontents .collection li[data-portfolio-type=' + type + ']').show();
+				}	
+								
+			});
+
 		    $(function() {
 		      $('#slides').slidesjs({
 		        width: 940,
-		        height: 1820
+		        height: 1820,
+		        callback: {
+			      loaded: function(number) {
+			        // Do something awesome!
+			        // Passes start slide number
+			        console.log('loaded', arguments);
+			      },
+			      start: function(number) {
+			        // Do something awesome!
+			        // Passes slide number at start of animation
+			        console.log('start', arguments);
+			      },
+			      complete: function(number) {
+			        // Do something awesome!
+			        // Passes slide number at end of animation
+			        console.log('complete', arguments);
+
+			        var img = $('#history .container #slides img')[number - 1];
+			        $('#history .container').css('height', img.height + 'px');
+			      }
+			    }
 		      });
 		    });
 		</script>
@@ -172,6 +202,7 @@
 			/* 네비게이션 */
 			/* home */
 			#top {
+				/*background: #1D1D1D;*/
 				background: #1d1d1d;
 			}
 			.logo {
@@ -179,10 +210,11 @@
 				margin: 10px;
 			}
 			#home {
+				/*background: #1D1D1D;*/
 				position: relative;
 				background: #1d1d1d;
 				margin: 0;
-				padding: 0 0 20px 0;
+				padding: 0 0 60px 0;
 			}
 			.home_tri {
 				position: relative;
@@ -220,7 +252,17 @@
 	        .tri_back2 img{
             	width: 100%;
 	        }
+	        .tri_back2-1 {
+	            width: 15%;
+	            position: absolute;
+	            top: 23%;
+	            right: 13%;
+	            z-index: 1;
+	        }
 
+	        .tri_back2-1 img{
+            	width: 100%;
+	        }
 	        .tri_back3 {
 	            width: 55%;
 	            position: absolute;
@@ -231,6 +273,37 @@
 
 	        .tri_back3 img{
             	width: 100%;
+	        }
+
+	        .home_ex1 {
+	            width: 60%;
+			    position: absolute;
+			    top: 35%;
+			    left: 5%;
+			    z-index: 3;
+	        }
+
+	        .home_ex2 {
+	            width: 58%;
+			    position: absolute;
+			    top: 68%;
+			    right: 5%;
+			    z-index: 3;
+	        }
+
+	        .home_ex3 {
+	            width: 55%;
+			    position: absolute;
+			    top: 101%;
+			    left: 7.5%;
+			    z-index: 3;
+	        }
+
+	        .home_tri p {
+	        	text-align: center;
+	        	color: #409f89;
+	        	font-size: 11px;
+    			line-height: 15.5px;
 	        }
 	        /* home */
 	        /* history */
@@ -248,8 +321,7 @@
 		      margin: 0 auto;
 		      width: 95%;
 		      max-width: 400px;
-		      height: 500px;
-		      overflow: scroll;
+		      height: 686px;
 		      position: relative;
 		    }
 
@@ -439,6 +511,7 @@
 			</div>
 		<div id="top">
 			<img class="logo" src="img/logo.png">
+			<img src="">
 		</div>
 		<!--<nav>
 			<ul>
@@ -453,8 +526,33 @@
 			<div class="home_tri">
 				<div class="tri_back1"><img src="img/home_tri_back1.png"></div>
 				<div class="tri_back2"><img src="img/home_tri_back2.png"></div>
+				<div class="tri_back2-1"><img src="img/home_tri_back2-1.png"></div>
 				<div class="tri_back3"><img src="img/home_tri_back3.png"></div>
 				<img src="img/home_tri.png">
+				<div class="home_ex1">
+					<p>
+					크리에이티브와 테크놀로지의 <br/>
+					조화로운 역할을 정의하고 <br/>
+					그 안에 새로운 기회를 찾아내는<br/>
+					한발 앞선 고민으로 세상의 <br/>
+					모든 것에 관심과 노력을 <br/>
+					불어넣습니다.
+					</p>
+				</div>
+				<div class="home_ex2">
+					<p>
+					서비스의 접점에 있는 기업과 사용자가 <br/>
+					만족스러운 시너지를 <br/>
+					이끌어낼 수 있도록 합니다.
+					</p>
+				</div>
+				<div class="home_ex3">
+					<p>
+					세상과 사람을 이어주고 세상과 기술을 <br/>
+					조화시켜 시장에서 바라는 성공적인 <br/>
+					서비스를 제시하겠습니다. 
+					</p>
+				</div>
 			</div>
 		</div>
 		<div id="history">
@@ -470,7 +568,7 @@
 			      <img src="img/history2008.png" alt="history">
 			      <img src="img/history2007.png" alt="history">
 			      <img src="img/history2006.png" alt="history">
-			      <img src="img/history2005.png" alt="history">
+			      <img src="img/history2005.png" alt="history"> 
 			      <img src="img/history2004.png" alt="history">
 			      <img src="img/history2003.png" alt="history">
 			      <a href="#0" class="slidesjs-previous slidesjs-navigation"><img src="img/ic_left.png"/></a>
@@ -482,18 +580,18 @@
 			<h1>Portfolio</h1>
 			<div class="pfNav">
 				<ul class="pfItem">
-					<li><a href="#">All</a></li>
-					<li><a href="#">Mobile App</a></li>
-					<li><a href="#">PC Application</a></li>
-					<li><a href="#">Web</a></li>
-					<li><a href="#">Digital Contents</a></li>
-					<li><a href="#">Platform</a></li>
-					<li><a href="#">Maintenance</a></li>
+					<a href="#showAll"><li>All</li></a>
+					<a href="#mobile"><li>Mobile App</li></a>
+					<a href="#pc"><li>PC Application</li></a>
+					<a href="#web"><li>Web</li></a>
+					<a href="#contents"><li>Digital Contents</li></a>
+					<a href="#platform"><li>Platform</li></a>
+					<a href="#maintenance"><li>Maintenance</li></a>
 				</ul>
 			</div>
-			<div class="pfContants">
+			<div class="pfcontents">
 				<ul class="collection">
-					<li>
+					<li data-portfolio-type='mobile'>
 					<a href="pf1_smartearset.html">
 						<img src="img/portfolio/2014_스마트이어셋/Cutting/smartearset_thrumnail_small.png">
 						<h6>Mobile App</h6>
@@ -501,7 +599,7 @@
 						<h5>2014.07 - 2014.11</h5>
 					</a>
 					</li>
-					<li>
+					<li data-portfolio-type='web'>
 					<a href="#">
 						<img src="img/portfolio/2014_제일기획컨텐츠제작/Cutting/samsungdotcom_thrumnail_small.png">
 						<h6>Web</h6>
@@ -509,7 +607,7 @@
 						<h5>2014.11 - 2015.05</h5>
 					</a>
 					</li>
-					<li>
+					<li data-portfolio-type='mobile'>
 					<a href="#">
 						<img src="img/portfolio/2014_Facecon/Cutting/2013_facecon_thrumnail_small.png">
 						<h6>Mobile App</h6>
@@ -517,7 +615,7 @@
 						<h5>2014.10</h5>
 					</a>
 					</li>
-					<li>
+					<li data-portfolio-type='mobile'>
 					<a href="#">
 						<img src="img/portfolio/2014_DaylogNote4향/Cutting/daylog_thrumnail_small.png">
 						<h6>Mobile App</h6>
@@ -525,7 +623,7 @@
 						<h5>2014.08 - 2014.12</h5>
 					</a>
 					</li>
-					<li>
+					<li data-portfolio-type='mobile'>
 					<a href="#">
 						<img src="img/portfolio/2014_Gear2Chronograph/Cutting/gear2_thrumnail_small.png">
 						<h6>Mobile App</h6>
@@ -533,7 +631,7 @@
 						<h5>2014.05</h5>
 					</a>
 					</li>
-					<li>
+					<li data-portfolio-type='mobile'>
 					<a href="#">
 						<img src="img/portfolio/2014_GearFit/Cutting/2013_Gearfit_thrumnail_small.png">
 						<h6>Mobile App</h6>
@@ -541,7 +639,7 @@
 						<h5>2014.05</h5>
 					</a>
 					</li>
-					<li>
+					<li data-portfolio-type='mobile'>
 					<a href="#">
 						<img src="img/portfolio/2014_GearS/Cutting/gears_thrumnail_small.png">
 						<h6>Mobile App</h6>
@@ -549,7 +647,7 @@
 						<h5>2014.09</h5>
 					</a>
 					</li>
-					<li>
+					<li data-portfolio-type='mobile'>
 					<a href="#">
 						<img src="img/portfolio/2014_런처플래닛/Cutting/launcherplanet_thrumnail_small.png">
 						<h6>Mobile App</h6>
@@ -557,7 +655,7 @@
 						<h5>2014.01 - 2014.12</h5>
 					</a>
 					</li>
-					<li>
+					<li data-portfolio-type='web'>
 					<a href="#">
 						<img src="img/portfolio/2014_FMM/Cutting/2013_fmm_thrumnail_small.png">
 						<h6>Web</h6>
@@ -565,7 +663,7 @@
 						<h5>2014.01 - 2014.12</h5>
 					</a>
 					</li>
-					<li>
+					<li data-portfolio-type='mobile'>
 					<a href="#">
 						<img src="img/portfolio/2014_NCT홍보앱/Cutting/nctapp_thrumnail_small.png">
 						<h6>Mobile App</h6>
@@ -573,7 +671,7 @@
 						<h5>2014.01 - 2014.10</h5>
 					</a>
 					</li>
-					<li>
+					<li data-portfolio-type='web'>
 					<a href="#">
 						<img src="img/portfolio/2014_C&SPortal/Cutting/c&sportal_thrumnail_small.png">
 						<h6>Web</h6>
@@ -581,7 +679,7 @@
 						<h5>2014.02 - 2014.12</h5>
 					</a>
 					</li>
-					<li>
+					<li data-portfolio-type='web'>
 					<a href="#">
 						<img src="img/portfolio/2014_ComicoAdmin/Cutting/comico_thrumnail_small.png">
 						<h6>Web | Platform</h6>
@@ -589,7 +687,7 @@
 						<h5>2014.07 - 2015.01</h5>
 					</a>
 					</li>
-					<li>
+					<li data-portfolio-type='platform'>
 					<a href="#">
 						<img src="img/portfolio/2014_오리온 촉촉한 초코칩 프로모션/Cutting/2014_오리온_촉촉한초코칩_프로모션_thrumnail.png">
 						<h6>Platform</h6>
@@ -597,7 +695,7 @@
 						<h5>2014.02 - 2014.05</h5>
 					</a>
 					</li>
-					<li>
+					<li data-portfolio-type='pc'>
 					<a href="#">
 						<img src="img/portfolio/2013_UX for Samsung Hub Win8 PCs/Cutting/2013_ux-for-samsung-hub-win8-pcs_thrumnail_big.png">
 						<h6>PC Application</h6>
@@ -605,7 +703,7 @@
 						<h5>2013.05 - 2014.01</h5>
 					</a>
 					</li>
-					<li>
+					<li data-portfolio-type='mobile'>
 					<a href="#">
 						<img src="img/portfolio/2013_CrimeCraft Promotion App/Cutting/2013_crimecraft promotion app_thrumnail_small.png">
 						<h6>Mobile App</h6>
@@ -613,7 +711,7 @@
 						<h5>2013.10 - 2013.11</h5>
 					</a>
 					</li>
-					<li>
+					<li data-portfolio-type='mobile'>
 					<a href="#">
 						<img src="img/portfolio/2013_DayLog/Cutting/2013_daylog_thrumnail_small.png">
 						<h6>Mobile App</h6>
@@ -621,7 +719,7 @@
 						<h5>2013.02</h5>
 					</a>
 					</li>
-					<li>
+					<li data-portfolio-type='mobile'>
 					<a href="#">
 						<img src="img/portfolio/2013_Samsung Galaxy Gear/Cutting/galaxy_thumb.png">
 						<h6>Mobile App</h6>
@@ -629,7 +727,7 @@
 						<h5>2014.01</h5>
 					</a>
 					</li>
-					<li>
+					<li data-portfolio-type='contents'>
 					<a href="#">
 						<img src="img/portfolio/2013_S-note Content/Cutting/2013_s-note content_thrumail_small.png">
 						<h6>Digital Contents | Maintenance</h6>
@@ -637,7 +735,7 @@
 						<h5>2013.02 - 2013.12</h5>
 					</a>
 					</li>
-					<li>
+					<li data-portfolio-type='platform'>
 					<a href="#">
 						<img src="img/portfolio/2013_Astron/Cutting/2013_astron_thrumnail_small.png">
 						<h6>Platform</h6>
@@ -645,7 +743,7 @@
 						<h5>2013.04 - 2013.11</h5>
 					</a>
 					</li>
-					<li>
+					<li data-portfolio-type='mobile'>
 					<a href="#">
 						<img src="img/portfolio/2014_SKP Launcher & Launcher Theme/Cutting/2013_skp_launcher_&_launcher_theme_thrumnail_small.png">
 						<h6>Mobile App</h6>
@@ -653,7 +751,7 @@
 						<h5>2013.04 - 2013.08</h5>
 					</a>
 					</li>
-					<li>
+					<li data-portfolio-type='web'>
 					<a href="#">
 						<img src="img/portfolio/2012_Family story/Cutting/family story_thurmnail.png">
 						<h6>Web</h6>
@@ -661,7 +759,7 @@
 						<h5>2012.06</h5>
 					</a>
 					</li>
-					<li>
+					<li data-portfolio-type='mobile'>
 					<a href="#">
 						<img src="img/portfolio/2012_Bada Test App 개발/Cutting/2012_bada-test-app개발_thumnail_small.png">
 						<h6>Mobile App</h6>
@@ -669,7 +767,7 @@
 						<h5>2012.01</h5>
 					</a>
 					</li>
-					<li>
+					<li data-portfolio-type='web'>
 					<a href="#">
 						<img src="img/portfolio/2013_Biz Suggest Sever_Admin Site/Cutting/2013_biz-suggest-sever_admin-site_thrumnail_small.png">
 						<h6>web</h6>
@@ -677,7 +775,7 @@
 						<h5>2012.02</h5>
 					</a>
 					</li>
-					<li>
+					<li data-portfolio-type='contents'>
 					<a href="#">
 						<img src="img/portfolio/2013_ChatOn Emoticon/Cutting/2013_chaton-emoticon_thrumnail_small.png">
 						<h6>Digital Contents | Maintenance</h6>
@@ -685,7 +783,7 @@
 						<h5>2012.03</h5>
 					</a>
 					</li>
-					<li>
+					<li data-portfolio-type='mobile'>
 					<a href="#">
 						<img src="img/portfolio/2012_My Story/Cutting/my-story_thurmnail.png">
 						<h6>Mobile App</h6>
@@ -693,7 +791,7 @@
 						<h5>2012.06</h5>
 					</a>
 					</li>
-					<li>
+					<li data-portfolio-type='mobile'>
 					<a href="#">
 						<img src="img/portfolio/2012_Smart Driving for TOYOTA/Cutting/2012_smart-driving-toyota_thrumnail.png">
 						<h6>Mobile App</h6>
@@ -701,7 +799,7 @@
 						<h5>2012.01</h5>
 					</a>
 					</li>
-					<li>
+					<li data-portfolio-type='mobile'>
 					<a href="#">
 						<img src="img/portfolio/2012_Smart driving/Cutting/2012_smart-driving_thrumnail_small.png">
 						<h6>Mobile App</h6>
@@ -709,7 +807,7 @@
 						<h5>2012.01</h5>
 					</a>
 					</li>
-					<li>
+					<li data-portfolio-type='contents'>
 					<a href="#">
 						<img src="img/portfolio/2011_Bada Lock screen/Cutting/2011_bada-lock-screen_thumnail.png">
 						<h6>Digital Contents</h6>
@@ -717,7 +815,7 @@
 						<h5>2011.12</h5>
 					</a>
 					</li>
-					<li>
+					<li data-portfolio-type='pc'>
 					<a href="#">
 						<img src="img/portfolio/2011_Reader's Hub 2.0 구축 및 운영/Cutting/reader's hub_thurmnail.png">
 						<h6>PC Application</h6>
@@ -725,7 +823,7 @@
 						<h5>2011.11</h5>
 					</a>
 					</li>
-					<li>
+					<li data-portfolio-type='mobile'>
 					<a href="#">
 						<img src="img/portfolio/2011_Girls’ Generation Phuket Photo book Service/Cutting/2011_Girls’-Generation-Phuket-Photo-book-Service_thumnail.png">
 						<h6>Mobile App</h6>
@@ -733,7 +831,7 @@
 						<h5>2011.10</h5>
 					</a>
 					</li>
-					<li>
+					<li data-portfolio-type='mobile'>
 					<a href="#">
 						<img src="img/portfolio/2011_SSKIN iphone skin service/Cutting/2011_SSKIN-iphone-skin-service_thumnail.png">
 						<h6>Mobile App</h6>
@@ -741,7 +839,7 @@
 						<h5>2011.07</h5>
 					</a>
 					</li>
-					<li>
+					<li data-portfolio-type='pc'>
 					<a href="#">
 						<img src="img/portfolio/2011_Building and Managing Samsung Apps 1.0 1.5 2.0/Cutting/samsungapps_thumbnail.png">
 						<h6>PC Application</h6>
@@ -749,7 +847,7 @@
 						<h5>2011.05</h5>
 					</a>
 					</li>
-					<li>
+					<li data-portfolio-type='mobile'>
 					<a href="#">
 						<img src="img/portfolio/2011_SSKIN Butterfly Android Market Open/Cutting/2011_SSKIN-Butterfly-Android-Market-Open_thumnail.png">
 						<h6>Mobile App</h6>
@@ -757,7 +855,7 @@
 						<h5>2011.05</h5>
 					</a>
 					</li>
-					<li>
+					<li data-portfolio-type='web'>
 					<a href="#">
 						<img src="img/portfolio/2011_Tstore Searching & Personamization Recommendation Service Improvement/Cutting/2011_Tstore-Searching-&-Personamization-Recommendation-Service-Improvement_thumnail.png">
 						<h6>Web</h6>
@@ -765,7 +863,7 @@
 						<h5>2011.04</h5>
 					</a>
 					</li>
-					<li>
+					<li data-portfolio-type='mobile'>
 					<a href="#">
 						<img src="img/portfolio/2011_Renault Samsung Motors Car Tab/Cutting/2011_Renault-Samsung-Motors-Car-Tab_thumnail.png">
 						<h6>Mobile App</h6>
@@ -773,7 +871,7 @@
 						<h5>2011.03</h5>
 					</a>
 					</li>
-					<li>
+					<li data-portfolio-type='web'>
 					<a href="#">
 						<img src="img/portfolio/2011_Samsung Mobile Dot Com LiveSets/Cutting/2011_Samsung Mobile Dot Com LiveSets_thumnail.png">
 						<h6>Web | Digital Contents</h6>
@@ -781,7 +879,7 @@
 						<h5>2011.03</h5>
 					</a>
 					</li>
-					<li>
+					<li data-portfolio-type='web'>
 					<a href="#">
 						<img src="img/portfolio/2011_SSKIN.NET Renewal/Cutting/2011_SSKIN.NET-Renewal_thumnail.png">
 						<h6>Web</h6>
@@ -789,7 +887,7 @@
 						<h5>2011.03</h5>
 					</a>
 					</li>
-					<li>
+					<li data-portfolio-type='contents'>
 					<a href="#">
 						<img src="img/portfolio/2011_SSKIN Girls’ Generation, Dong Bang Shin Ki Theme Launching/Cutting/2011_SSKIN-Girls’-Generation,-Dong-Bang-Shin-Ki-Theme-Launching_thumnail.png">
 						<h6>Digital Contents</h6>
@@ -797,7 +895,7 @@
 						<h5>2011.03</h5>
 					</a>
 					</li>
-					<li>
+					<li data-portfolio-type='web'>
 					<a href="#">
 						<img src="img/portfolio/2011_Samsung Mobile Dot Com Management/Cutting/2011_Samsung Mobile Dot Com Management_thumnail.png">
 						<h6>Web | Maintenance</h6>
@@ -805,7 +903,7 @@
 						<h5>2011.01</h5>
 					</a>
 					</li>
-					<li>
+					<li data-portfolio-type='contents'>
 					<a href="#">
 						<img src="img/portfolio/2011_SSKIN Android Theme Service Launching/Cutting/2011_SSKIN Android Theme Service Launching_thumnail.png">
 						<h6>Digital Contents</h6>
@@ -813,7 +911,7 @@
 						<h5>2011.01</h5>
 					</a>
 					</li>
-					<li>
+					<li data-portfolio-type='pc'>
 					<a href="#">
 						<img src="img/portfolio/2011_Kies 2.0 Music store/Cutting/2011_Kies-2.0-Music-store_thumnail.png">
 						<h6>PC Application</h6>
@@ -821,7 +919,7 @@
 						<h5>2010.12</h5>
 					</a>
 					</li>
-					<li>
+					<li data-portfolio-type='web'>
 					<a href="#">
 						<img src="img/portfolio/2011_Smart Meeting/Cutting/2011_Smart Meeting_thumnail.png">
 						<h6>Web</h6>
@@ -829,7 +927,7 @@
 						<h5>2012.12</h5>
 					</a>
 					</li>
-					<li>
+					<li data-portfolio-type='pc'>
 					<a href="#">
 						<img src="img/portfolio/2010_SSKIN Theme Manager/Cutting/2010_SSKIN Theme Manager_thumnail.png">
 						<h6>PC Application</h6>
@@ -837,7 +935,7 @@
 						<h5>2010.03 - 2010.10</h5>
 					</a>
 					</li>
-					<li>
+					<li data-portfolio-type='mobile'>
 					<a href="#">
 						<img src="img/portfolio/2010_삼성모바일닷컴 마이 폰북/Cutting/2010_삼성모바일닷컴 마이 폰북_thurmnail.png">
 						<h6>Mobile App</h6>
@@ -845,7 +943,7 @@
 						<h5>2010.09</h5>
 					</a>
 					</li>
-					<li>
+					<li data-portfolio-type='contents'>
 					<a href="#">
 						<img src="img/portfolio/2010_SSKIN Theme Service/Cutting/2010_SSKIN Theme Service_thumnail.png">
 						<h6>Digital Contents</h6>
@@ -853,7 +951,7 @@
 						<h5>2010.03 - 2010.09</h5>
 					</a>
 					</li>
-					<li>
+					<li data-portfolio-type='mobile'>
 					<a href="#">
 						<img src="img/portfolio/2010_삼성모바일닷컴 폰 배경화면/Cutting/phonescreen_thumbnail.png">
 						<h6>Mobile App</h6>
@@ -861,7 +959,7 @@
 						<h5>2010.07</h5>
 					</a>
 					</li>
-					<li>
+					<li data-portfolio-type='web'>
 					<a href="#">
 						<img src="img/portfolio/2010_SamsungMobile.com Premium UCI/Cutting/2010_SamsungMobile.com Premium UCI_thumnail.png">
 						<h6>Web</h6>
@@ -869,7 +967,7 @@
 						<h5>2010.03</h5>
 					</a>
 					</li>
-					<li>
+					<li data-portfolio-type='web'>
 					<a href="#">
 						<img src="img/portfolio/2010_삼성모바일닷컴 Health & Life/Cutting/healthcoach_thurmnail.png">
 						<h6>Web | Maintenance</h6>
@@ -877,7 +975,7 @@
 						<h5>2010.03</h5>
 					</a>
 					</li>
-					<li>
+					<li data-portfolio-type='pc'>
 					<a href="#">
 						<img src="img/portfolio/2010_삼성모바일닷컴 Health & Life Editor & Application/Cutting/healthapp_thurmnail.png">
 						<h6>PC Application</h6>
@@ -885,7 +983,7 @@
 						<h5>2010.03</h5>
 					</a>
 					</li>
-					<li>
+					<li data-portfolio-type='mobile'>
 					<a href="#">
 						<img src="img/portfolio/2010_SSKIN B Boy/Cutting/SSKIN_Bboy_thurmnail.png">
 						<h6>Mobile App</h6>
@@ -893,7 +991,7 @@
 						<h5>2010.02</h5>
 					</a>
 					</li>
-					<li>
+					<li data-portfolio-type='pc'>
 					<a href="#">
 						<img src="img/portfolio/2010_Samsungmobile.com Global UCI STUDIO/Cutting/Samsungmobile.com Global UCI STUDIO_thumnail.png">
 						<h6>PC Application | Web</h6>
@@ -901,7 +999,7 @@
 						<h5>2010.01</h5>
 					</a>
 					</li>
-					<li>
+					<li data-portfolio-type='web'>
 					<a href="#">
 						<img src="img/portfolio/2009_삼성모바일닷컴 구축/Cutting/삼성모바일닷컴구축_thurmnail.png">
 						<h6>Web</h6>
@@ -909,7 +1007,7 @@
 						<h5>2009.12</h5>
 					</a>
 					</li>
-					<li>
+					<li data-portfolio-type='mobile'>
 					<a href="#">
 						<img src="img/portfolio/2009_SKT T 영상고객센터/Cutting/skt-t-고객센_thumnail.png">
 						<h6>Mobile App</h6>
@@ -917,7 +1015,7 @@
 						<h5>2009.05 - 2009.11</h5>
 					</a>
 					</li>
-					<li>
+					<li data-portfolio-type='mobile'>
 					<a href="#">
 						<img src="img/portfolio/2009_SSKIN Lock Screen/Cutting/SSKIN Lock Screen_thurmnail.png">
 						<h6>Mobile App</h6>
@@ -925,7 +1023,7 @@
 						<h5>2009.11</h5>
 					</a>
 					</li>
-					<li>
+					<li data-portfolio-type='platform'>
 					<a href="#">
 						<img src="img/portfolio/2013_eCliX Suite/Cutting/2013_eclix-suite_thrumnail_small.png">
 						<h6>Platform</h6>
@@ -933,7 +1031,7 @@
 						<h5>2007.11 - 2014.12</h5>
 					</a>
 					</li>
-					<li>
+					<li data-portfolio-type='web'>
 					<a href="#">
 						<img src="img/portfolio/2008_이모디모 구축 및 운영/Cutting/emodioimplement_thumbnail.png">
 						<h6>Web | Maintenance</h6>
@@ -941,7 +1039,7 @@
 						<h5>2008.01</h5>
 					</a>
 					</li>
-					<li>
+					<li data-portfolio-type='pc'>
 					<a href="#">
 						<img src="img/portfolio/2008_이모디오SPACE/Cutting/SPACE_thumbnail.png">
 						<h6>PC Application</h6>
@@ -949,7 +1047,7 @@
 						<h5>2008.01</h5>
 					</a>
 					</li>
-					<li>
+					<li data-portfolio-type='pc'>
 					<a href="#">
 						<img src="img/portfolio/2008_My Nate 모바일 개인화 서비스/Cutting/my nate_thurmnail.png">
 						<h6>PC Application</h6>
@@ -957,7 +1055,7 @@
 						<h5>2008.07 - 2008.10</h5>
 					</a>
 					</li>
-					<li>
+					<li data-portfolio-type='web'>
 					<a href="#">
 						<img src="img/portfolio/2008_삼성모바일닷컴UCIFree/Cutting/samsungUCIFree_Thumbnail.png">
 						<h6>Web</h6>
@@ -1062,8 +1160,8 @@
 				<div class="copyright">ⓒ2016.prompt,Inc. All right reserved.
 				</div>
 				<div class="company">
-					<a href="http://www.dlto.co.kr/"><img src="img/footer_dlto.png"></a>
-					<a href="http://idun8.com/"><img src="img/footer_idun8.png"></a>
+					<a href=""><img src="img/footer_dlto.png"></a>
+					<a href=""><img src="img/footer_idun8.png"></a>
 				</div>
 			</div>
 		</div>
