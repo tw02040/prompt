@@ -309,7 +309,7 @@
 	        /* history */
 	        #history {
 	        	background-color: #1d1d1d;
-	        	padding: 0 0 30px;
+	        	padding: 5% 0;
 	        }
 
 	        #slides {
@@ -321,7 +321,6 @@
 		      margin: 0 auto;
 		      width: 95%;
 		      max-width: 400px;
-		      height: 686px;
 		      position: relative;
 		    }
 
@@ -474,30 +473,8 @@
 			}
 			/* footer */
 		</style>
-		<script type="text/javascript" language="javascript">
-			$(function(){
-				$('.btnMenu').toggle( 
-			    // 우측 메뉴와 센터 컨텐츠를 margin-left -260px 만큼 이동
-				    function() {
-				     fn_resizeHeight();
-				     $('#slideRight').removeClass('blind').addClass('on').animate({ right: 0 }, 'fast', function() { });
-				     $('#wrap').animate({ 'margin-left' : '-260px' }, 'fast', function() {  });  
-				    }, 
-				    function() {
-				     $('#wrap').animate({ 'margin-left' : '0' }, 'fast', function() { });
-				     $('#slideRight').animate({ right: -260 }, 'fast', function() { }).queue(function(){
-				      $(this).removeClass('on').addClass('blind');
-				      $(this).dequeue();
-				     });
-			    	}
-			   );
-			});
-			//좌,우측 페이지 scrren 세로사이즈에 맞게 리사이징
-			fn_resizeHeight = function() {
-				var sideHeight = $(document).height(); 
-				$('.sideMenu').css({'height':sideHeight});
-			}
-		</script>
+		<!-- 메뉴 자바스크립트 -->
+		<script type="text/javascript" language="javascript" src="js/menu.js"></script>
 	</head>
 	<body>
 	<div id="wrap">
@@ -606,7 +583,7 @@
 					</a>
 					</li>
 					<li data-portfolio-type='web'>
-					<a href="#">
+					<a href="pf2_jeilcontents.html">
 						<img src="img/portfolio/2014_제일기획컨텐츠제작/Cutting/samsungdotcom_thrumnail_small.png">
 						<h6>Web</h6>
 						<h2>삼성닷컴 컨텐츠 제작</h2>
@@ -614,7 +591,7 @@
 					</a>
 					</li>
 					<li data-portfolio-type='mobile'>
-					<a href="#">
+					<a href="pf3_facecon.html">
 						<img src="img/portfolio/2014_Facecon/Cutting/2013_facecon_thrumnail_small.png">
 						<h6>Mobile App</h6>
 						<h2>페이스콘</h2>
@@ -622,7 +599,7 @@
 					</a>
 					</li>
 					<li data-portfolio-type='mobile'>
-					<a href="#">
+					<a href="pf4_Note4daylog.html">
 						<img src="img/portfolio/2014_DaylogNote4향/Cutting/daylog_thrumnail_small.png">
 						<h6>Mobile App</h6>
 						<h2>중국 Note4향 Day Log Application 개발</h2>
@@ -630,7 +607,7 @@
 					</a>
 					</li>
 					<li data-portfolio-type='mobile'>
-					<a href="#">
+					<a href="pf5_gear2.html">
 						<img src="img/portfolio/2014_Gear2Chronograph/Cutting/gear2_thrumnail_small.png">
 						<h6>Mobile App</h6>
 						<h2>Gear 2향 크로노그라프 스타일 시계 앱 9종 제작</h2>
@@ -638,7 +615,7 @@
 					</a>
 					</li>
 					<li data-portfolio-type='mobile'>
-					<a href="#">
+					<a href="pf6_Gearfit.html">
 						<img src="img/portfolio/2014_GearFit/Cutting/2013_Gearfit_thrumnail_small.png">
 						<h6>Mobile App</h6>
 						<h2>Gear Fit 향 시계 테마 10종 제작</h2>
@@ -646,7 +623,7 @@
 					</a>
 					</li>
 					<li data-portfolio-type='mobile'>
-					<a href="#">
+					<a href="pf7_gears.html">
 						<img src="img/portfolio/2014_GearS/Cutting/gears_thrumnail_small.png">
 						<h6>Mobile App</h6>
 						<h2>Gear S향 시계 앱 3종 제작</h2>
@@ -654,7 +631,7 @@
 					</a>
 					</li>
 					<li data-portfolio-type='mobile'>
-					<a href="#">
+					<a href="pf8_launcherplanet.html">
 						<img src="img/portfolio/2014_런처플래닛/Cutting/launcherplanet_thrumnail_small.png">
 						<h6>Mobile App</h6>
 						<h2>런처플래닛</h2>
@@ -662,7 +639,7 @@
 					</a>
 					</li>
 					<li data-portfolio-type='web'>
-					<a href="#">
+					<a href="pf9_fmm.html">
 						<img src="img/portfolio/2014_FMM/Cutting/2013_fmm_thrumnail_small.png">
 						<h6>Web</h6>
 						<h2>Find My Mobile UX 개발 및 운영</h2>
@@ -670,7 +647,7 @@
 					</a>
 					</li>
 					<li data-portfolio-type='mobile'>
-					<a href="#">
+					<a href="pf10_nctapp.html">
 						<img src="img/portfolio/2014_NCT홍보앱/Cutting/nctapp_thrumnail_small.png">
 						<h6>Mobile App</h6>
 						<h2>NCT 홍보 App</h2>
@@ -678,7 +655,7 @@
 					</a>
 					</li>
 					<li data-portfolio-type='web'>
-					<a href="#">
+					<a href="pf11_c&sportal.html">
 						<img src="img/portfolio/2014_C&SPortal/Cutting/c&sportal_thrumnail_small.png">
 						<h6>Web</h6>
 						<h2>C&amp;S Portal UX 개발 및 운영</h2>
@@ -686,7 +663,7 @@
 					</a>
 					</li>
 					<li data-portfolio-type='web'>
-					<a href="#">
+					<a href="pf12_comico.html">
 						<img src="img/portfolio/2014_ComicoAdmin/Cutting/comico_thrumnail_small.png">
 						<h6>Web | Platform</h6>
 						<h2>Comico Admin 기획 및 개발</h2>
@@ -694,7 +671,7 @@
 					</a>
 					</li>
 					<li data-portfolio-type='platform'>
-					<a href="#">
+					<a href="pf13_orion.html">
 						<img src="img/portfolio/2014_오리온 촉촉한 초코칩 프로모션/Cutting/2014_오리온_촉촉한초코칩_프로모션_thrumnail.png">
 						<h6>Platform</h6>
 						<h2>오리온 촉촉한 초코칩 프로모션</h2>
@@ -702,7 +679,7 @@
 					</a>
 					</li>
 					<li data-portfolio-type='pc'>
-					<a href="#">
+					<a href="pf14_UX-for-Samsung-Hub-Win8-PCs.html">
 						<img src="img/portfolio/2013_UX for Samsung Hub Win8 PCs/Cutting/2013_ux-for-samsung-hub-win8-pcs_thrumnail_big.png">
 						<h6>PC Application</h6>
 						<h2>삼성 허브 Win8 PC향 UX 개발</h2>
@@ -710,7 +687,7 @@
 					</a>
 					</li>
 					<li data-portfolio-type='mobile'>
-					<a href="#">
+					<a href="pf15_CrimeCraft.html">
 						<img src="img/portfolio/2013_CrimeCraft Promotion App/Cutting/2013_crimecraft promotion app_thrumnail_small.png">
 						<h6>Mobile App</h6>
 						<h2>CrimeCraft 홍보 App</h2>
@@ -718,7 +695,7 @@
 					</a>
 					</li>
 					<li data-portfolio-type='mobile'>
-					<a href="#">
+					<a href="pf16_dayLog.html">
 						<img src="img/portfolio/2013_DayLog/Cutting/2013_daylog_thrumnail_small.png">
 						<h6>Mobile App</h6>
 						<h2>Day Log</h2>
@@ -726,7 +703,7 @@
 					</a>
 					</li>
 					<li data-portfolio-type='mobile'>
-					<a href="#">
+					<a href="pf17_galaxygear.html">
 						<img src="img/portfolio/2013_Samsung Galaxy Gear/Cutting/galaxy_thumb.png">
 						<h6>Mobile App</h6>
 						<h2>Samsung Galaxy Gear 시계 앱 개발</h2>
@@ -734,7 +711,7 @@
 					</a>
 					</li>
 					<li data-portfolio-type='contents'>
-					<a href="#">
+					<a href="pf18_s-note-content.html">
 						<img src="img/portfolio/2013_S-note Content/Cutting/2013_s-note content_thrumail_small.png">
 						<h6>Digital Contents | Maintenance</h6>
 						<h2>S-note 컨텐츠</h2>
@@ -742,7 +719,7 @@
 					</a>
 					</li>
 					<li data-portfolio-type='platform'>
-					<a href="#">
+					<a href="pf19_astron.html">
 						<img src="img/portfolio/2013_Astron/Cutting/2013_astron_thrumnail_small.png">
 						<h6>Platform</h6>
 						<h2>Astron</h2>
@@ -750,7 +727,7 @@
 					</a>
 					</li>
 					<li data-portfolio-type='mobile'>
-					<a href="#">
+					<a href="pf20_skp_launcher_launcher_theme.html">
 						<img src="img/portfolio/2014_SKP Launcher & Launcher Theme/Cutting/2013_skp_launcher_&_launcher_theme_thrumnail_small.png">
 						<h6>Mobile App</h6>
 						<h2>SKP 런처 &amp; 런처 테마</h2>
@@ -758,7 +735,7 @@
 					</a>
 					</li>
 					<li data-portfolio-type='web'>
-					<a href="#">
+					<a href="pf21_family-story.html">
 						<img src="img/portfolio/2012_Family story/Cutting/family story_thurmnail.png">
 						<h6>Web</h6>
 						<h2>Family story</h2>
@@ -766,7 +743,7 @@
 					</a>
 					</li>
 					<li data-portfolio-type='mobile'>
-					<a href="#">
+					<a href="pf22_bada-test-app개발.html">
 						<img src="img/portfolio/2012_Bada Test App 개발/Cutting/2012_bada-test-app개발_thumnail_small.png">
 						<h6>Mobile App</h6>
 						<h2>Bada Test App 개발</h2>
@@ -774,7 +751,7 @@
 					</a>
 					</li>
 					<li data-portfolio-type='web'>
-					<a href="#">
+					<a href="pf23_biz-suggest-sever_admin-site.html">
 						<img src="img/portfolio/2013_Biz Suggest Sever_Admin Site/Cutting/2013_biz-suggest-sever_admin-site_thrumnail_small.png">
 						<h6>web</h6>
 						<h2>Biz Suggest Sever / 어드민 사이트 구축</h2>
@@ -782,7 +759,7 @@
 					</a>
 					</li>
 					<li data-portfolio-type='contents'>
-					<a href="#">
+					<a href="pf24_chaton-emoticon.html">
 						<img src="img/portfolio/2013_ChatOn Emoticon/Cutting/2013_chaton-emoticon_thrumnail_small.png">
 						<h6>Digital Contents | Maintenance</h6>
 						<h2>ChatON 서비스 운영</h2>
@@ -790,7 +767,7 @@
 					</a>
 					</li>
 					<li data-portfolio-type='mobile'>
-					<a href="#">
+					<a href="pf25_mystory.html">
 						<img src="img/portfolio/2012_My Story/Cutting/my-story_thurmnail.png">
 						<h6>Mobile App</h6>
 						<h2>My Story 1.0</h2>
@@ -798,7 +775,7 @@
 					</a>
 					</li>
 					<li data-portfolio-type='mobile'>
-					<a href="#">
+					<a href="pf26_Smart-Driving-for-TOYOTA.html">
 						<img src="img/portfolio/2012_Smart Driving for TOYOTA/Cutting/2012_smart-driving-toyota_thrumnail.png">
 						<h6>Mobile App</h6>
 						<h2>Smart Driving for TOYOTA</h2>
@@ -806,7 +783,7 @@
 					</a>
 					</li>
 					<li data-portfolio-type='mobile'>
-					<a href="#">
+					<a href="pf27_Smart-Driving.html">
 						<img src="img/portfolio/2012_Smart driving/Cutting/2012_smart-driving_thrumnail_small.png">
 						<h6>Mobile App</h6>
 						<h2>Smart Driving</h2>
@@ -814,15 +791,15 @@
 					</a>
 					</li>
 					<li data-portfolio-type='contents'>
-					<a href="#">
+					<a href="pf28_Bada-Lock-screen.html">
 						<img src="img/portfolio/2011_Bada Lock screen/Cutting/2011_bada-lock-screen_thumnail.png">
 						<h6>Digital Contents</h6>
-						<h2>BAda Lock screen</h2>
+						<h2>Bada Lock screen</h2>
 						<h5>2011.12</h5>
 					</a>
 					</li>
 					<li data-portfolio-type='pc'>
-					<a href="#">
+					<a href="pf29_Reader's-Hub-2.0.html">
 						<img src="img/portfolio/2011_Reader's Hub 2.0 구축 및 운영/Cutting/reader's hub_thurmnail.png">
 						<h6>PC Application</h6>
 						<h2>Reader's Hub 2.0 구축 및 운영</h2>
@@ -830,7 +807,7 @@
 					</a>
 					</li>
 					<li data-portfolio-type='mobile'>
-					<a href="#">
+					<a href="pf30_Girls’-Generation-Phuket-Photo-book-Service.html">
 						<img src="img/portfolio/2011_Girls’ Generation Phuket Photo book Service/Cutting/2011_Girls’-Generation-Phuket-Photo-book-Service_thumnail.png">
 						<h6>Mobile App</h6>
 						<h2>소녀시대 푸켓화보 Photobook service</h2>
@@ -838,7 +815,7 @@
 					</a>
 					</li>
 					<li data-portfolio-type='mobile'>
-					<a href="#">
+					<a href="pf31_SSKIN-iphone-skin-service.html">
 						<img src="img/portfolio/2011_SSKIN iphone skin service/Cutting/2011_SSKIN-iphone-skin-service_thumnail.png">
 						<h6>Mobile App</h6>
 						<h2>SSKIN iPhone skin service</h2>
@@ -846,7 +823,7 @@
 					</a>
 					</li>
 					<li data-portfolio-type='pc'>
-					<a href="#">
+					<a href="pf32_Building-and-Managing-Samsung-Apps.html">
 						<img src="img/portfolio/2011_Building and Managing Samsung Apps 1.0 1.5 2.0/Cutting/samsungapps_thumbnail.png">
 						<h6>PC Application</h6>
 						<h2>Samsung Apps 1.0 1.5 2.0 구축 및 운영</h2>
@@ -854,7 +831,7 @@
 					</a>
 					</li>
 					<li data-portfolio-type='mobile'>
-					<a href="#">
+					<a href="pf33_SSKIN-Butterfly-Android-Market-Open.html">
 						<img src="img/portfolio/2011_SSKIN Butterfly Android Market Open/Cutting/2011_SSKIN-Butterfly-Android-Market-Open_thumnail.png">
 						<h6>Mobile App</h6>
 						<h2>SSKIN Butterfly 안드로이드마켓 오픈</h2>
@@ -862,7 +839,7 @@
 					</a>
 					</li>
 					<li data-portfolio-type='web'>
-					<a href="#">
+					<a href="pf34_Tstore-Searching-Personamization-Recommendation-Service-Improvement.html">
 						<img src="img/portfolio/2011_Tstore Searching & Personamization Recommendation Service Improvement/Cutting/2011_Tstore-Searching-&-Personamization-Recommendation-Service-Improvement_thumnail.png">
 						<h6>Web</h6>
 						<h2>Tstore 검색 &amp; 개인화 추천 서비스 고도화</h2>
@@ -870,7 +847,7 @@
 					</a>
 					</li>
 					<li data-portfolio-type='mobile'>
-					<a href="#">
+					<a href="pf35_Renault-Samsung-Motors-Car-Tab.html">
 						<img src="img/portfolio/2011_Renault Samsung Motors Car Tab/Cutting/2011_Renault-Samsung-Motors-Car-Tab_thumnail.png">
 						<h6>Mobile App</h6>
 						<h2>르노 삼성자동차 Car Tab</h2>
@@ -878,7 +855,7 @@
 					</a>
 					</li>
 					<li data-portfolio-type='web'>
-					<a href="#">
+					<a href="pf36_Samsung-Mobile-Dot-Com-LiveSets.html">
 						<img src="img/portfolio/2011_Samsung Mobile Dot Com LiveSets/Cutting/2011_Samsung Mobile Dot Com LiveSets_thumnail.png">
 						<h6>Web | Digital Contents</h6>
 						<h2>삼성모바일닷컴 LiveSets</h2>
@@ -886,7 +863,7 @@
 					</a>
 					</li>
 					<li data-portfolio-type='web'>
-					<a href="#">
+					<a href="pf37_SSKIN.NET-Renewal.html">
 						<img src="img/portfolio/2011_SSKIN.NET Renewal/Cutting/2011_SSKIN.NET-Renewal_thumnail.png">
 						<h6>Web</h6>
 						<h2>SSKIN.NET 리뉴얼</h2>
@@ -894,7 +871,7 @@
 					</a>
 					</li>
 					<li data-portfolio-type='contents'>
-					<a href="#">
+					<a href="pf38_SSKIN-Girls’-Generation,Dong-Bang-Shin-Ki-Theme-Launching.html">
 						<img src="img/portfolio/2011_SSKIN Girls’ Generation, Dong Bang Shin Ki Theme Launching/Cutting/2011_SSKIN-Girls’-Generation,-Dong-Bang-Shin-Ki-Theme-Launching_thumnail.png">
 						<h6>Digital Contents</h6>
 						<h2>SSKIN 소녀시대, 동방신기 테마 런칭</h2>
@@ -902,7 +879,7 @@
 					</a>
 					</li>
 					<li data-portfolio-type='web'>
-					<a href="#">
+					<a href="pf39_Samsung-Mobile-Dot-Com-Management.html">
 						<img src="img/portfolio/2011_Samsung Mobile Dot Com Management/Cutting/2011_Samsung Mobile Dot Com Management_thumnail.png">
 						<h6>Web | Maintenance</h6>
 						<h2>삼성모바일닷컴 운영</h2>
@@ -910,15 +887,15 @@
 					</a>
 					</li>
 					<li data-portfolio-type='contents'>
-					<a href="#">
+					<a href="pf40_SSKIN-Android-Theme-Service-Launching.html">
 						<img src="img/portfolio/2011_SSKIN Android Theme Service Launching/Cutting/2011_SSKIN Android Theme Service Launching_thumnail.png">
 						<h6>Digital Contents</h6>
-						<h2>SSKIN 안드로이드 테마 서비스 런팅</h2>
+						<h2>SSKIN 안드로이드 테마 서비스 런칭</h2>
 						<h5>2011.01</h5>
 					</a>
 					</li>
 					<li data-portfolio-type='pc'>
-					<a href="#">
+					<a href="pf41_Kies-2.0-Music-store.html">
 						<img src="img/portfolio/2011_Kies 2.0 Music store/Cutting/2011_Kies-2.0-Music-store_thumnail.png">
 						<h6>PC Application</h6>
 						<h2>Kies 2.0 Music store</h2>
@@ -926,7 +903,7 @@
 					</a>
 					</li>
 					<li data-portfolio-type='web'>
-					<a href="#">
+					<a href="pf42_Smart-Meeting.html">
 						<img src="img/portfolio/2011_Smart Meeting/Cutting/2011_Smart Meeting_thumnail.png">
 						<h6>Web</h6>
 						<h2>스마트 회의</h2>
@@ -934,7 +911,7 @@
 					</a>
 					</li>
 					<li data-portfolio-type='pc'>
-					<a href="#">
+					<a href="pf43_SSKIN-Theme-Manager.html">
 						<img src="img/portfolio/2010_SSKIN Theme Manager/Cutting/2010_SSKIN Theme Manager_thumnail.png">
 						<h6>PC Application</h6>
 						<h2>SSKIN Theme Manager</h2>
@@ -942,7 +919,7 @@
 					</a>
 					</li>
 					<li data-portfolio-type='mobile'>
-					<a href="#">
+					<a href="pf44_SamsungMobile.com-PhoneBook.html">
 						<img src="img/portfolio/2010_삼성모바일닷컴 마이 폰북/Cutting/2010_삼성모바일닷컴 마이 폰북_thurmnail.png">
 						<h6>Mobile App</h6>
 						<h2>삼성모바일닷컴 마이 폰북</h2>
@@ -950,7 +927,7 @@
 					</a>
 					</li>
 					<li data-portfolio-type='contents'>
-					<a href="#">
+					<a href="pf45_SSKIN-Theme-Service.html">
 						<img src="img/portfolio/2010_SSKIN Theme Service/Cutting/2010_SSKIN Theme Service_thumnail.png">
 						<h6>Digital Contents</h6>
 						<h2>SSKIN Theme Service</h2>
@@ -958,7 +935,7 @@
 					</a>
 					</li>
 					<li data-portfolio-type='mobile'>
-					<a href="#">
+					<a href="pf46_SamsungMobile.com-background.html">
 						<img src="img/portfolio/2010_삼성모바일닷컴 폰 배경화면/Cutting/phonescreen_thumbnail.png">
 						<h6>Mobile App</h6>
 						<h2>삼성모바일닷컴 폰배경화면</h2>
@@ -966,7 +943,7 @@
 					</a>
 					</li>
 					<li data-portfolio-type='web'>
-					<a href="#">
+					<a href="pf47_SamsungMobile.com-Premium-UCI.html">
 						<img src="img/portfolio/2010_SamsungMobile.com Premium UCI/Cutting/2010_SamsungMobile.com Premium UCI_thumnail.png">
 						<h6>Web</h6>
 						<h2>삼성모바일닷컴 Premium UCI</h2>
@@ -974,7 +951,7 @@
 					</a>
 					</li>
 					<li data-portfolio-type='web'>
-					<a href="#">
+					<a href="pf48_SamsungMobile.com-Health-Life.html">
 						<img src="img/portfolio/2010_삼성모바일닷컴 Health & Life/Cutting/healthcoach_thurmnail.png">
 						<h6>Web | Maintenance</h6>
 						<h2>삼성모바일닷컴 Health &amp; Life</h2>
@@ -982,7 +959,7 @@
 					</a>
 					</li>
 					<li data-portfolio-type='pc'>
-					<a href="#">
+					<a href="pf49_SamsungMobile.com-Health-Life-Editor-Application.html">
 						<img src="img/portfolio/2010_삼성모바일닷컴 Health & Life Editor & Application/Cutting/healthapp_thurmnail.png">
 						<h6>PC Application</h6>
 						<h2>삼성모바일닷컴 Health &amp; Life Editor &amp; Application</h2>
@@ -990,7 +967,7 @@
 					</a>
 					</li>
 					<li data-portfolio-type='mobile'>
-					<a href="#">
+					<a href="pf50_SSKIN-B-Boy.html">
 						<img src="img/portfolio/2010_SSKIN B Boy/Cutting/SSKIN_Bboy_thurmnail.png">
 						<h6>Mobile App</h6>
 						<h2>SSKIN B.Boy</h2>
@@ -998,7 +975,7 @@
 					</a>
 					</li>
 					<li data-portfolio-type='pc'>
-					<a href="#">
+					<a href="pf51_Samsungmobile.com-Global-UCI-STUDIO.html">
 						<img src="img/portfolio/2010_Samsungmobile.com Global UCI STUDIO/Cutting/Samsungmobile.com Global UCI STUDIO_thumnail.png">
 						<h6>PC Application | Web</h6>
 						<h2>Samsungmobile.com Global UCI STUDIO</h2>
@@ -1006,7 +983,7 @@
 					</a>
 					</li>
 					<li data-portfolio-type='web'>
-					<a href="#">
+					<a href="pf52_Samsungmobile.com-made.html">
 						<img src="img/portfolio/2009_삼성모바일닷컴 구축/Cutting/삼성모바일닷컴구축_thurmnail.png">
 						<h6>Web</h6>
 						<h2>삼성모바일닷컴 구축</h2>
@@ -1014,7 +991,7 @@
 					</a>
 					</li>
 					<li data-portfolio-type='mobile'>
-					<a href="#">
+					<a href="pf53_SKT-Smart-Customer-Consulting.html">
 						<img src="img/portfolio/2009_SKT T 영상고객센터/Cutting/skt-t-고객센_thumnail.png">
 						<h6>Mobile App</h6>
 						<h2>SKT T 영상고객센터</h2>
@@ -1022,7 +999,7 @@
 					</a>
 					</li>
 					<li data-portfolio-type='mobile'>
-					<a href="#">
+					<a href="pf54_SSKIN-Lock_screen.html">
 						<img src="img/portfolio/2009_SSKIN Lock Screen/Cutting/SSKIN Lock Screen_thurmnail.png">
 						<h6>Mobile App</h6>
 						<h2>SSKIN Lock Screen</h2>
@@ -1030,7 +1007,7 @@
 					</a>
 					</li>
 					<li data-portfolio-type='platform'>
-					<a href="#">
+					<a href="pf55_eclix-suite.html">
 						<img src="img/portfolio/2013_eCliX Suite/Cutting/2013_eclix-suite_thrumnail_small.png">
 						<h6>Platform</h6>
 						<h2>eCliX Suite</h2>
@@ -1038,7 +1015,7 @@
 					</a>
 					</li>
 					<li data-portfolio-type='web'>
-					<a href="#">
+					<a href="pf56_emodioimplement.html">
 						<img src="img/portfolio/2008_이모디모 구축 및 운영/Cutting/emodioimplement_thumbnail.png">
 						<h6>Web | Maintenance</h6>
 						<h2>이모디오닷컴 구축 &amp; 운영</h2>
@@ -1046,7 +1023,7 @@
 					</a>
 					</li>
 					<li data-portfolio-type='pc'>
-					<a href="#">
+					<a href="pf57_emodio.com-SPACE.html">
 						<img src="img/portfolio/2008_이모디오SPACE/Cutting/SPACE_thumbnail.png">
 						<h6>PC Application</h6>
 						<h2>이모디오닷컴 SPACE</h2>
@@ -1054,7 +1031,7 @@
 					</a>
 					</li>
 					<li data-portfolio-type='pc'>
-					<a href="#">
+					<a href="pf58_My-Nate-Mobile-perconalization.html">
 						<img src="img/portfolio/2008_My Nate 모바일 개인화 서비스/Cutting/my nate_thurmnail.png">
 						<h6>PC Application</h6>
 						<h2>My NATE 모바일 개인화 서비스</h2>
@@ -1062,7 +1039,7 @@
 					</a>
 					</li>
 					<li data-portfolio-type='web'>
-					<a href="#">
+					<a href="pf59_samsungUCIFree.html">
 						<img src="img/portfolio/2008_삼성모바일닷컴UCIFree/Cutting/samsungUCIFree_Thumbnail.png">
 						<h6>Web</h6>
 						<h2>삼성모바일닷컴(이모디오닷컴) UCI free</h2>
