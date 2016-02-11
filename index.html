@@ -15,40 +15,102 @@
 				var type = window.location.hash.replace('#', '');
 				$('.pfcontents .collection li').hide();
 				if (type == 'showAll') {
-					$('.pfcontents .collection li').show();					
+					$('.pfcontents .collection li').show();				
 				} else {
 					$('.pfcontents .collection li').hide();
 					$('.pfcontents .collection li[data-portfolio-type=' + type + ']').show();
 					$('.pfcontents .collection li[data-pf-type=' + type + ']').show();
 				}	
-								
+				if (type == 'showAll') {	
+					$('.pfItem .pfItemAll').css('color', '#409f89').css('font-weight', '400');	
+					$('.pfItem .pfItemMobile').css('color', '#fff').css('font-weight', '300');	
+					$('.pfItem .pfItemPc').css('color', '#fff').css('font-weight', '300');
+					$('.pfItem .pfItemWeb').css('color', '#fff').css('font-weight', '300');
+					$('.pfItem .pfItemContents').css('color', '#fff').css('font-weight', '300');
+					$('.pfItem .pfItemPlatform').css('color', '#fff').css('font-weight', '300');	
+					$('.pfItem .pfItemMaintenance').css('color', '#fff').css('font-weight', '300');	
+				} 
+				else if (type == 'mobile') {
+					$('.pfItem .pfItemAll').css('color', '#fff').css('font-weight', '300');	
+					$('.pfItem .pfItemMobile').css('color', '#409f89').css('font-weight', '400');	
+					$('.pfItem .pfItemPc').css('color', '#fff').css('font-weight', '300');
+					$('.pfItem .pfItemWeb').css('color', '#fff').css('font-weight', '300');
+					$('.pfItem .pfItemContents').css('color', '#fff').css('font-weight', '300');
+					$('.pfItem .pfItemPlatform').css('color', '#fff').css('font-weight', '300');	
+					$('.pfItem .pfItemMaintenance').css('color', '#fff').css('font-weight', '300');
+				}	
+				else if (type == 'pc') {
+					$('.pfItem .pfItemAll').css('color', '#fff').css('font-weight', '300');	
+					$('.pfItem .pfItemMobile').css('color', '#fff').css('font-weight', '300');	
+					$('.pfItem .pfItemPc').css('color', '#409f89').css('font-weight', '400');
+					$('.pfItem .pfItemWeb').css('color', '#fff').css('font-weight', '300');
+					$('.pfItem .pfItemContents').css('color', '#fff').css('font-weight', '300');
+					$('.pfItem .pfItemPlatform').css('color', '#fff').css('font-weight', '300');	
+					$('.pfItem .pfItemMaintenance').css('color', '#fff').css('font-weight', '300');
+				}	
+				else if (type == 'web') {
+					$('.pfItem .pfItemAll').css('color', '#fff').css('font-weight', '300');	
+					$('.pfItem .pfItemMobile').css('color', '#fff').css('font-weight', '300');	
+					$('.pfItem .pfItemPc').css('color', '#fff').css('font-weight', '300');
+					$('.pfItem .pfItemWeb').css('color', '#409f89').css('font-weight', '400');
+					$('.pfItem .pfItemContents').css('color', '#fff').css('font-weight', '300');
+					$('.pfItem .pfItemPlatform').css('color', '#fff').css('font-weight', '300');	
+					$('.pfItem .pfItemMaintenance').css('color', '#fff').css('font-weight', '300');
+				}	
+				else if (type == 'contents') {
+					$('.pfItem .pfItemAll').css('color', '#fff').css('font-weight', '300');	
+					$('.pfItem .pfItemMobile').css('color', '#fff').css('font-weight', '300');	
+					$('.pfItem .pfItemPc').css('color', '#fff').css('font-weight', '300');
+					$('.pfItem .pfItemWeb').css('color', '#fff').css('font-weight', '300');
+					$('.pfItem .pfItemContents').css('color', '#409f89').css('font-weight', '400');
+					$('.pfItem .pfItemPlatform').css('color', '#fff').css('font-weight', '300');	
+					$('.pfItem .pfItemMaintenance').css('color', '#fff').css('font-weight', '300');
+				}	
+				else if (type == 'platform') {
+					$('.pfItem .pfItemAll').css('color', '#fff').css('font-weight', '300');	
+					$('.pfItem .pfItemMobile').css('color', '#fff').css('font-weight', '300');	
+					$('.pfItem .pfItemPc').css('color', '#fff').css('font-weight', '300');
+					$('.pfItem .pfItemWeb').css('color', '#fff').css('font-weight', '300');
+					$('.pfItem .pfItemContents').css('color', '#fff').css('font-weight', '300');
+					$('.pfItem .pfItemPlatform').css('color', '#409f89').css('font-weight', '400');	
+					$('.pfItem .pfItemMaintenance').css('color', '#fff').css('font-weight', '300');
+				}	
+				else if (type == 'maintenance') {
+					$('.pfItem .pfItemAll').css('color', '#fff').css('font-weight', '300');	
+					$('.pfItem .pfItemMobile').css('color', '#fff').css('font-weight', '300');	
+					$('.pfItem .pfItemPc').css('color', '#fff').css('font-weight', '300');
+					$('.pfItem .pfItemWeb').css('color', '#fff').css('font-weight', '300');
+					$('.pfItem .pfItemContents').css('color', '#fff').css('font-weight', '300');
+					$('.pfItem .pfItemPlatform').css('color', '#fff').css('font-weight', '300');	
+					$('.pfItem .pfItemMaintenance').css('color', '#409f89').css('font-weight', '400');
+				}			
 			});
 
 		    $(function() {
-		      $('#slides').slidesjs({
-		        width: 940,
-		        height: 1820,
-		        callback: {
-			      loaded: function(number) {
-			        // Do something awesome!
-			        // Passes start slide number
-			        console.log('loaded', arguments);
-			      },
-			      start: function(number) {
-			        // Do something awesome!
-			        // Passes slide number at start of animation
-			        console.log('start', arguments);
-			      },
-			      complete: function(number) {
-			        // Do something awesome!
-			        // Passes slide number at end of animation
-			        console.log('complete', arguments);
+			    $('#slides').slidesjs({
+			        width: 940,
+			        height: 1820,
+			        callback: {
+				      loaded: function(number) {
+				        // Do something awesome!
+				        // Passes start slide number
+				        console.log('loaded', arguments);
+				      },
+				      start: function(number) {
+				        // Do something awesome!
+				        // Passes slide number at start of animation
+				        console.log('start', arguments);
+				      },
+				      complete: function(number) {
+				        // Do something awesome!
+				        // Passes slide number at end of animation
+				        console.log('complete', arguments);
 
-			        var img = $('#history .container #slides img')[number - 1];
-			        $('#history .container').css('height', img.height + 'px');
-			      }
-			    }
-		      });
+				        var img = $('#history .container #slides img')[number - 1];
+				        $('#history .container').css('height', img.height + 'px');
+				      }
+				    }
+			    });
 		    });
 		</script>
 		
@@ -149,11 +211,11 @@
 			}
 			#slideRight{
 				position:fixed;
-				right:-260px;
+				right:-180px;
 				top:0;
 				height:100%;
-				background:#212121;
-				width:260px;
+				background:#383838;
+				width:180px;
 				z-index: 1000;
 			}
 			.sideMenu h2{
@@ -167,32 +229,22 @@
 			}
 			.sideMenu .list li{
 				margin: 0 20px;
-				height: 53px;
-				border-bottom:1px solid #2c2c2c;
+				height: 50px;
+				border-bottom:1px solid #484848;
 			}
 			.sideMenu .list li:first-child{
-				height:75px;
 				border-bottom:0;
-				text-align: center;
-				margin: 0;
+				margin: 0 10px;
 			}
 			.sideMenu .list li a{
-				height:52px;
+				height:50px;
 				font-size:16px;
 				color:#c8c8c8;
 				line-height:52px;
-				border-bottom:1px solid #616161;
 				display:block;
-				padding-left:15px;
 			}
 			.sideMenu .list li img{
-				width: 150px;
-			}
-			.sideMenu .list li:first-child a{
-				border-bottom:0;
-			}
-			#slideRight .list li a{
-				padding-right:15px;
+				width: 100px;
 			}
 			.on{
 				display:block;
@@ -354,29 +406,40 @@
 		    }
 
 		    .pfNav {
+		    	width: 97%;
+			    height: 28vw;
+			    margin: 0 auto;
+		    }
+
+		    @media all and (max-width: 351px) {
+		    	.pfNav {
+			    	width: 97%;
+				    height: 38vw;
+				    margin: 0 auto;
+		    	}
 		    }
 
 		    .pfItem {
-		    	margin: 10px 0;
+		    	margin: 0;
 		    }
 
 		    .pfItem li{
-		    	float: top;
-		        margin: 0 auto;
-		        padding: 7px 0 0 0;
-		        width: 90%;
-		        height: 27px;
-		        max-width: 400px;
-		        border: 1px;
-		        border-style: solid;
-		        border-color: #e6e6e6;
-		        background-color: #f3f3f3;
+		    	float: left;
+		        padding: 0 15px;
+		        height: 5vw;
+		        border-right: 1px solid #fff;
 		        text-align: center;
 		        vertical-align: middle;
+		        color: #fff;
+		        margin: 9px 0;
+    			font-size: 4.2vw;
+    			font-weight: 300;
 		    }
 
 		    .pfItem a:first-child li {
 		        border-radius: 2px 2px 0 0;
+		        color: #409f89;
+		        font-weight: 400;
 		    }
 
 		    .pfItem a:last-child li {
@@ -564,13 +627,13 @@
 			<h1>Portfolio</h1>
 			<div class="pfNav">
 				<ul class="pfItem">
-					<a href="#showAll"><li>All</li></a>
-					<a href="#mobile"><li>Mobile App</li></a>
-					<a href="#pc"><li>PC Application</li></a>
-					<a href="#web"><li>Web</li></a>
-					<a href="#contents"><li>Digital Contents</li></a>
-					<a href="#platform"><li>Platform</li></a>
-					<a href="#maintenance"><li>Maintenance</li></a>
+					<a href="#showAll"><li class="pfItemAll">All</li></a>
+					<a href="#mobile"><li class="pfItemMobile">Mobile App</li></a>
+					<a href="#pc"><li class="pfItemPc">PC Application</li></a>
+					<a href="#web"><li class="pfItemWeb">Web</li></a>
+					<a href="#contents"><li class="pfItemContents">Digital Contents</li></a>
+					<a href="#platform"><li class="pfItemPlatform">Platform</li></a>
+					<a href="#maintenance"><li class="pfItemMaintenance">Maintenance</li></a>
 				</ul>
 			</div>
 			<div class="pfcontents">
@@ -1072,7 +1135,7 @@
 				</div>
 				<div>
 					<p>Address</p>
-					<p>서울특별시 서초구 바우뫼로 147<br/>서울측별시 서초구 양재동 70번지</p>
+					<p>서울특별시 서초구 바우뫼로 147<br/>서울특별시 서초구 양재동 70번지</p>
 				</div>
 				<div>
 					<p>E-mail</p>
