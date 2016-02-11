@@ -4,11 +4,11 @@ $(function(){
 				    function() {
 				     fn_resizeHeight();
 				     $('#slideRight').removeClass('blind').addClass('on').animate({ right: 0 }, 'fast', function() { });
-				     $('#wrap').animate({ 'margin-left' : '-260px' }, 'fast', function() {  });  
+				     $('#wrap').animate({ 'margin-left' : '-180px' }, 'fast', function() {  });  
 				    }, 
 				    function() {
 				     $('#wrap').animate({ 'margin-left' : '0' }, 'fast', function() { });
-				     $('#slideRight').animate({ right: -260 }, 'fast', function() { }).queue(function(){
+				     $('#slideRight').animate({ right: -180 }, 'fast', function() { }).queue(function(){
 				      $(this).removeClass('on').addClass('blind');
 				      $(this).dequeue();
 				     });
