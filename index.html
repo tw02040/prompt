@@ -412,17 +412,27 @@
 			    max-width: 400px;
 		    }
 
-		    @media all and (max-width: 351px) {
+		    @media all and (max-width: 340px) {
 		    	.pfNav {
 				    height: 38vw;
 		    	}
 		    }
 
-		    @media (min-width: 558px) and all {
+		    @media all and (min-width: 588px) {
 		    	.pfNav {
 				    height: 26vw;
 		    	}
-		    	.pfItem li{
+		    	.pfItem li {
+			        height: 5vw;
+	    			font-size: 3.2vw;
+		    	}
+		    }
+
+		    @media all and (orientation:landscape) {
+		    	.pfNav {
+				    height: 26vw;
+		    	}
+		    	.pfItem li {
 			        height: 5vw;
 	    			font-size: 3.2vw;
 		    	}
