@@ -10,6 +10,7 @@
 		<!-- 히스토리 슬라이드 -->
 		<script src="js/jquery.slides.min.js">
 		</script>
+		<!-- 포트폴리오 카테고리 설정, 히스토리 이미지 길이에 따른 히스토리 섹션 길이 설정 -->
 		<script>
 			window.addEventListener('hashchange', function(evt) {
 				var type = window.location.hash.replace('#', '');
@@ -85,7 +86,7 @@
 					$('.pfItem .pfItemMaintenance').css('color', '#409f89').css('font-weight', '400');
 				}			
 			});
-
+			
 		    $(function() {
 			    $('#slides').slidesjs({
 			        width: 940,
@@ -252,10 +253,8 @@
 			.blind{
 				display:none;
 			}
-			/* 네비게이션 */
 			/* home */
 			#top {
-				/*background: #1D1D1D;*/
 				background: #1d1d1d;
 			}
 			.logo {
@@ -263,7 +262,6 @@
 				margin: 10px;
 			}
 			#home {
-				/*background: #1D1D1D;*/
 				position: relative;
 				background: #1d1d1d;
 				margin: 0;
@@ -358,7 +356,6 @@
 	        	font-size: 3vw;
     			line-height: 4.3vw;
 	        }
-	        /* home */
 	        /* history */
 	        #history {
 	        	background-color: #1d1d1d;
@@ -396,11 +393,9 @@
 		      position: absolute;
 		      right: 30%;
 		    }
-		    /* history */
 		    /* portfolio */
 		    #portfolio { 
 		    	position: relative;
-		    	/*background-color: #E6E6E6;*/
 		    	background-color: #1d1d1d;
 		    	padding: 0 0 20px;
 		    }
@@ -474,8 +469,6 @@
 		        box-sizing: border-box;
 		        display: block;
 		    }
-
-			/* portfolio */
 			/* contact */
 			#contact {
 				background-color: #1d1d1d;
@@ -512,7 +505,6 @@
 				width: 100%;
 				height: 345px;
 			}
-			/* contact */
 			/* footer */
 			#footer { 
 				width: 90%;
@@ -532,7 +524,6 @@
 				height: 10px;
 				margin: 20px 10px 0 0;
 			}
-			/* footer */
 
 			@media all and (min-width: 588px) {
 		    	.pfNav {
@@ -1126,15 +1117,6 @@
 				</ul>
 			</div>
 		</div>
-		<!--<div id="news">
-			<h1>News</h1>
-			<img src="">
-			<h3>프람트와 함께 할 경력 디자이너를 기다립니다.</h3>
-			<p>프람트와 함께 할 경력 디자이너를 기다립니다.
-크리에이티브하며 유연한 사고를 가진 디자이너 
-서비스 이해가 빠르며 질문을 많이 하는 디자이너 
-열정적으로 맡은 바 직무를 성실히 수행하는 디자이너</p>
-		</div>-->
 		<div id="contact">
 			<h1>Contact</h1>
 			<div class="contact-us">
