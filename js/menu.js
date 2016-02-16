@@ -5,7 +5,7 @@ $(function(){
 				     fn_resizeHeight();
 				     $('#slideRight').removeClass('blind').addClass('on').animate({ right: 0 }, 'fast', function() { });
 				     $('#wrap').animate({ 'margin-left' : '-180px' }, 'fast', function() {  });
-				     $('.nav .btnMenu').css('background', 'url(img/ic_menu_2.png) no-repeat 0 0');  
+				     $('.nav .btnMenu').css('background', 'url(img/ic_menu_2.png) no-repeat 0 0').css('background-size', '70px');
 				    }, 
 				    function() {
 				     $('#wrap').animate({ 'margin-left' : '0' }, 'fast', function() { });
@@ -13,7 +13,7 @@ $(function(){
 				      $(this).removeClass('on').addClass('blind');
 				      $(this).dequeue();
 				     });
-				     $('.nav .btnMenu').css('background', 'url(img/ic_menu.png) no-repeat 0 0');
+				     $('.nav .btnMenu').css('background', 'url(img/ic_menu.png) no-repeat 0 0').css('background-size', '70px');
 			    	}
 			   );
 			});
