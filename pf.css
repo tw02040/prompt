@@ -23,7 +23,6 @@
 				margin:0; 
 				padding:0;
 				min-width:320px;
-				background:#1D1D1D;
 			}
 			.icMenu {
 				position: fixed;
@@ -31,11 +30,12 @@
 				z-index: 10000;
 			}
 			.nav{
-				height:52px;
+				height:70px;
 				overflow:hidden;
 				width:100%;
 				position: fixed;
 				z-index: 100;
+				margin: -20px 0;
 			}
 			.nav ul{
 				position:relative;
@@ -50,16 +50,18 @@
 			}
 			.nav .btnMenu{
 				right:0;
-				top:10px;
+				top:0;
+				width: 70px;
+				height: 70px;
 				background:url(img/ic_menu.png) no-repeat 0 0;
-				background-size:39px 39px;
+				background-size:70px 70px;
 			}
 			#slideRight{
 				position:fixed;
 				right:-180px;
 				top:0;
 				height:100%;
-				background:#383838;
+				background:#2A9C82;
 				width:180px;
 				z-index: 1000;
 			}
@@ -73,18 +75,12 @@
 				background:#262626;
 			}
 			.sideMenu .list li{
-				margin: 0 20px;
-				height: 50px;
-				border-bottom:1px solid #484848;
-			}
-			.sideMenu .list li:first-child{
-				border-bottom:0;
-				margin: 0 10px;
+				margin: 10px 25px 0;
+				height: 45px;
 			}
 			.sideMenu .list li a{
-				height:50px;
-				font-size:16px;
-				color:#c8c8c8;
+				font-size:18pt;
+				color:#f1eded;
 				line-height:52px;
 				display:block;
 			}
@@ -97,13 +93,8 @@
 			.blind{
 				display:none;
 			}
-			.logo {
-			    max-width: 200px;
-			    margin: 10px;
-			}
-			/* 네비게이션 */
 			/* 포트폴리오 제목 */h2 {
-				margin: 10px 0;
+				margin: 10px 50px 10px 0;
 				font-family: 'Nanum Barun Gothic', sans-serif;
 				font-weight: normal;
 				color: #fff;
