@@ -5,12 +5,12 @@
 		<meta charset="ut f-8">
 		<meta name="viewport" content="initial-scale=1,width=device-width"/>
 		<meta name="format-detection" content="telephone=no" />
+		<!-- 히스토리 슬라이드 css -->
 		<link rel="stylesheet" href="css/swiper.min.css">
 		<script type="text/javascript" language="javascript" src="http://code.jquery.com/jquery-1.8.2.min.js">
 		</script>
+		<!-- 히스토리 슬라이드 js-->
 		<script type="text/javascript" src="js/swiper.jquery.min.js"></script>
-		<!-- 히스토리 슬라이드 -->
-		<script src="js/jquery.slides.min.js">
 		</script>
 		<!-- 포트폴리오 카테고리 설정, 히스토리 이미지 길이에 따른 히스토리 섹션 길이 설정 -->
 		<script>
@@ -26,97 +26,34 @@
 				}	
 				if (type == 'showAll') {	
 					$('.pfItem .pfItemAll').css('color', '#409f89').css('font-weight', '400');	
-					$('.pfItem .pfItemMobile').css('color', '#777').css('font-weight', '300');	
-					$('.pfItem .pfItemPc').css('color', '#777').css('font-weight', '300');
-					$('.pfItem .pfItemWeb').css('color', '#777').css('font-weight', '300');
-					$('.pfItem .pfItemContents').css('color', '#777').css('font-weight', '300');
-					$('.pfItem .pfItemPlatform').css('color', '#777').css('font-weight', '300');	
-					$('.pfItem .pfItemMaintenance').css('color', '#777').css('font-weight', '300');	
+					$('.pfItem .pfItemMobile, .pfItem .pfItemPc, .pfItem .pfItemWeb, .pfItem .pfItemContents, .pfItem .pfItemPlatform, .pfItem .pfItemMaintenance').css('color', '#777').css('font-weight', '300');
 				} 
 				else if (type == 'mobile') {
-					$('.pfItem .pfItemAll').css('color', '#777').css('font-weight', '300');	
 					$('.pfItem .pfItemMobile').css('color', '#409f89').css('font-weight', '400');	
-					$('.pfItem .pfItemPc').css('color', '#777').css('font-weight', '300');
-					$('.pfItem .pfItemWeb').css('color', '#777').css('font-weight', '300');
-					$('.pfItem .pfItemContents').css('color', '#777').css('font-weight', '300');
-					$('.pfItem .pfItemPlatform').css('color', '#777').css('font-weight', '300');	
-					$('.pfItem .pfItemMaintenance').css('color', '#777').css('font-weight', '300');
+					$('.pfItem .pfItemAll, .pfItem .pfItemPc, .pfItem .pfItemWeb, .pfItem .pfItemContents, .pfItem .pfItemPlatform, .pfItem .pfItemMaintenance').css('color', '#777').css('font-weight', '300');
 				}	
 				else if (type == 'pc') {
-					$('.pfItem .pfItemAll').css('color', '#777').css('font-weight', '300');	
-					$('.pfItem .pfItemMobile').css('color', '#777').css('font-weight', '300');	
 					$('.pfItem .pfItemPc').css('color', '#409f89').css('font-weight', '400');
-					$('.pfItem .pfItemWeb').css('color', '#777').css('font-weight', '300');
-					$('.pfItem .pfItemContents').css('color', '#777').css('font-weight', '300');
-					$('.pfItem .pfItemPlatform').css('color', '#777').css('font-weight', '300');	
-					$('.pfItem .pfItemMaintenance').css('color', '#777').css('font-weight', '300');
+					$('.pfItem .pfItemAll, .pfItem .pfItemMobile, .pfItem .pfItemWeb, .pfItem .pfItemContents, .pfItem .pfItemPlatform, .pfItem .pfItemMaintenance').css('color', '#777').css('font-weight', '300');
 				}	
 				else if (type == 'web') {
-					$('.pfItem .pfItemAll').css('color', '#777').css('font-weight', '300');	
-					$('.pfItem .pfItemMobile').css('color', '#777').css('font-weight', '300');	
-					$('.pfItem .pfItemPc').css('color', '#777').css('font-weight', '300');
 					$('.pfItem .pfItemWeb').css('color', '#409f89').css('font-weight', '400');
-					$('.pfItem .pfItemContents').css('color', '#777').css('font-weight', '300');
-					$('.pfItem .pfItemPlatform').css('color', '#777').css('font-weight', '300');	
-					$('.pfItem .pfItemMaintenance').css('color', '#777').css('font-weight', '300');
+					$('.pfItem .pfItemAll, .pfItem .pfItemMobile, .pfItem .pfItemPc, .pfItem .pfItemContents, .pfItem .pfItemPlatform, .pfItem .pfItemMaintenance').css('color', '#777').css('font-weight', '300');
 				}	
 				else if (type == 'contents') {
-					$('.pfItem .pfItemAll').css('color', '#777').css('font-weight', '300');	
-					$('.pfItem .pfItemMobile').css('color', '#777').css('font-weight', '300');	
-					$('.pfItem .pfItemPc').css('color', '#777').css('font-weight', '300');
-					$('.pfItem .pfItemWeb').css('color', '#777').css('font-weight', '300');
 					$('.pfItem .pfItemContents').css('color', '#409f89').css('font-weight', '400');
-					$('.pfItem .pfItemPlatform').css('color', '#777').css('font-weight', '300');	
-					$('.pfItem .pfItemMaintenance').css('color', '#777').css('font-weight', '300');
+					$('.pfItem .pfItemAll, .pfItem .pfItemMobile, .pfItem .pfItemPc, .pfItem .pfItemWeb, .pfItem .pfItemPlatform, .pfItem .pfItemMaintenance').css('color', '#777').css('font-weight', '300');
 				}	
 				else if (type == 'platform') {
-					$('.pfItem .pfItemAll').css('color', '#777').css('font-weight', '300');	
-					$('.pfItem .pfItemMobile').css('color', '#777').css('font-weight', '300');	
-					$('.pfItem .pfItemPc').css('color', '#777').css('font-weight', '300');
-					$('.pfItem .pfItemWeb').css('color', '#777').css('font-weight', '300');
-					$('.pfItem .pfItemContents').css('color', '#777').css('font-weight', '300');
 					$('.pfItem .pfItemPlatform').css('color', '#409f89').css('font-weight', '400');	
-					$('.pfItem .pfItemMaintenance').css('color', '#777').css('font-weight', '300');
+					$('.pfItem .pfItemAll, .pfItem .pfItemMobile, .pfItem .pfItemPc, .pfItem .pfItemWeb, .pfItem .pfItemContents, .pfItem .pfItemMaintenance').css('color', '#777').css('font-weight', '300');
 				}	
 				else if (type == 'maintenance') {
-					$('.pfItem .pfItemAll').css('color', '#777').css('font-weight', '300');	
-					$('.pfItem .pfItemMobile').css('color', '#777').css('font-weight', '300');	
-					$('.pfItem .pfItemPc').css('color', '#777').css('font-weight', '300');
-					$('.pfItem .pfItemWeb').css('color', '#777').css('font-weight', '300');
-					$('.pfItem .pfItemContents').css('color', '#777').css('font-weight', '300');
-					$('.pfItem .pfItemPlatform').css('color', '#777').css('font-weight', '300');	
 					$('.pfItem .pfItemMaintenance').css('color', '#409f89').css('font-weight', '400');
+					$('.pfItem .pfItemAll, .pfItem .pfItemMobile, .pfItem .pfItemPc, .pfItem .pfItemWeb, .pfItem .pfItemContents, .pfItem .pfItemPlatform').css('color', '#777').css('font-weight', '300');	
 				}			
 			});
 			
-		    $(function() {
-  
-
-			    // $('#slides').slidesjs({
-			    //     width: 940,
-			    //     height: 1820,
-			    //     callback: {
-				   //    loaded: function(number) {
-				   //      // Do something awesome!
-				   //      // Passes start slide number
-				   //      console.log('loaded', arguments);
-				   //    },
-				   //    start: function(number) {
-				   //      // Do something awesome!
-				   //      // Passes slide number at start of animation
-				   //      console.log('start', arguments);
-				   //    },
-				   //    complete: function(number) {
-				   //      // Do something awesome!
-				   //      // Passes slide number at end of animation
-				   //      console.log('complete', arguments);
-
-				   //      var img = $('#history .container #slides img')[number - 1];
-				   //      $('#history .container').css('height', img.height + 'px');
-				   //    }
-				   //  }
-			    // });
-		    });
 		</script>
 		
 		<!-- Google Fonts embed code -->
@@ -370,14 +307,6 @@
 	        	width: 100%;
 		    }
 
-		    .container {
-		      margin: 0 auto;
-		      padding: 0 0 50px;
-		      width: 95%;
-		      max-width: 400px;
-		      position: relative;
-		    }
-
 		    .slidesjs-pagination .active {
 		      color:red;
 		    }
@@ -566,17 +495,7 @@
 			</div>
 		<div id="top">
 			<img class="logo" src="img/logo.png">
-			<img src="">
 		</div>
-		<!--<nav>
-			<ul>
-				<li><a href="#home">Home</a></li>
-				<li><a href="#history">History</a></li>
-				<li><a href="#portfolio">Portfolio</a></li>
-				<li><a href="#news">news</a></li>
-				<li><a href="#contact">Contact</a></li>
-			</ul>
-		</nav>-->
 		<div id="home">
 			<div class="home_tri">
 				<div class="tri_back1"><img src="img/home_tri_back1.png"></div>
@@ -655,25 +574,6 @@
 			    <a class="slidesjs-previous slidesjs-navigation"><img src="img/ic_left.png"/></a>
 			    <a class="slidesjs-next slidesjs-navigation"><img src="img/ic_right.png"/></a>
 			</div>
-
-			<!-- <div class="container">
-			    <div id="slides">
-			      <img src="img/history2014.png" alt="history">
-			      <img src="img/history2003.png" alt="history">
-			      <img src="img/history2004.png" alt="history">
-			      <img src="img/history2005.png" alt="history">
-			      <img src="img/history2006.png" alt="history">
-			      <img src="img/history2007.png" alt="history">
-			      <img src="img/history2008.png" alt="history">
-			      <img src="img/history2009.png" alt="history">
-			      <img src="img/history2010.png" alt="history">
-			      <img src="img/history2011.png" alt="history"> 
-			      <img src="img/history2012.png" alt="history">
-			      <img src="img/history2013.png" alt="history">
-			      <a href="#0" class="slidesjs-previous slidesjs-navigation"><img src="img/ic_left.png"/></a>
-			      <a href="#0" class="slidesjs-next slidesjs-navigation"><img src="img/ic_right.png"/></a>
-			    </div>
-			  </div> -->
 		</div>
 		<div id="portfolio">
 			<h1>Portfolio</h1>
@@ -1273,6 +1173,7 @@
 				  var target = $(href == "#" || href == "" ? 'html' : href);
 				  var position = target.offset().top;
 				  $('body,html').animate({scrollTop:position}, speed, 'swing');
+				  $('.btnMenu').click();
 				  return false;
 			   });
 			});
