@@ -5,9 +5,10 @@
 		<meta charset="ut f-8">
 		<meta name="viewport" content="initial-scale=1,width=device-width"/>
 		<meta name="format-detection" content="telephone=no" />
-		
+		<link rel="stylesheet" href="css/swiper.min.css">
 		<script type="text/javascript" language="javascript" src="http://code.jquery.com/jquery-1.8.2.min.js">
 		</script>
+		<script type="text/javascript" src="js/swiper.jquery.min.js"></script>
 		<!-- 히스토리 슬라이드 -->
 		<script src="js/jquery.slides.min.js">
 		</script>
@@ -89,30 +90,32 @@
 			});
 			
 		    $(function() {
-			    $('#slides').slidesjs({
-			        width: 940,
-			        height: 1820,
-			        callback: {
-				      loaded: function(number) {
-				        // Do something awesome!
-				        // Passes start slide number
-				        console.log('loaded', arguments);
-				      },
-				      start: function(number) {
-				        // Do something awesome!
-				        // Passes slide number at start of animation
-				        console.log('start', arguments);
-				      },
-				      complete: function(number) {
-				        // Do something awesome!
-				        // Passes slide number at end of animation
-				        console.log('complete', arguments);
+  
 
-				        var img = $('#history .container #slides img')[number - 1];
-				        $('#history .container').css('height', img.height + 'px');
-				      }
-				    }
-			    });
+			    // $('#slides').slidesjs({
+			    //     width: 940,
+			    //     height: 1820,
+			    //     callback: {
+				   //    loaded: function(number) {
+				   //      // Do something awesome!
+				   //      // Passes start slide number
+				   //      console.log('loaded', arguments);
+				   //    },
+				   //    start: function(number) {
+				   //      // Do something awesome!
+				   //      // Passes slide number at start of animation
+				   //      console.log('start', arguments);
+				   //    },
+				   //    complete: function(number) {
+				   //      // Do something awesome!
+				   //      // Passes slide number at end of animation
+				   //      console.log('complete', arguments);
+
+				   //      var img = $('#history .container #slides img')[number - 1];
+				   //      $('#history .container').css('height', img.height + 'px');
+				   //    }
+				   //  }
+			    // });
 		    });
 		</script>
 		
@@ -360,12 +363,11 @@
 	        /* history */
 	        #history {
 	        	background-color: #1d1d1d;
-	        	padding: 11% 0 0;
+	        	padding: 11% 0 48px 0;
 	        }
 
-	        #slides {
-		      display: none;
-		      position: relative;
+	        .swiper-slide img {
+	        	width: 100%;
 		    }
 
 		    .container {
@@ -384,7 +386,7 @@
 		    }
 		    .slidesjs-previous, .slidesjs-next {
 		      position: absolute;
-		      top: 3.45%;
+		      top: 25px;
 		      z-index: 100;
 		    }
 		    .slidesjs-previous {
@@ -610,7 +612,51 @@
 		</div>
 		<div id="history">
 			<h1>History</h1>
-			<div class="container">
+			<div class="swiper-container">
+			    <div class="swiper-wrapper">		        
+			        <div class="swiper-slide">
+			        	<img src="img/history2014.png" alt="history">
+			        </div>	
+			        <div class="swiper-slide">
+			        	<img src="img/history2003.png" alt="history">
+			        </div>			        
+			        <div class="swiper-slide">
+			        	<img src="img/history2004.png" alt="history">
+			        </div>			        
+			        <div class="swiper-slide">
+			        	<img src="img/history2005.png" alt="history">
+			        </div>			        
+			        <div class="swiper-slide">
+			        	<img src="img/history2006.png" alt="history">
+			        </div>			        
+			        <div class="swiper-slide">
+			        	<img src="img/history2007.png" alt="history">
+			        </div>			        
+			        <div class="swiper-slide">
+			        	<img src="img/history2008.png" alt="history">
+			        </div>			        
+			        <div class="swiper-slide">
+			        	<img src="img/history2009.png" alt="history">
+			        </div>			        
+			        <div class="swiper-slide">
+			        	<img src="img/history2010.png" alt="history">
+			        </div>			        
+			        <div class="swiper-slide">
+			        	<img src="img/history2011.png" alt="history">
+			        </div>			        
+			        <div class="swiper-slide">
+			        	<img src="img/history2012.png" alt="history">
+			        </div>			        
+			        <div class="swiper-slide">
+			        	<img src="img/history2013.png" alt="history">
+			        </div>			        
+		        
+			    </div>			    
+			    <a class="slidesjs-previous slidesjs-navigation"><img src="img/ic_left.png"/></a>
+			    <a class="slidesjs-next slidesjs-navigation"><img src="img/ic_right.png"/></a>
+			</div>
+
+			<!-- <div class="container">
 			    <div id="slides">
 			      <img src="img/history2014.png" alt="history">
 			      <img src="img/history2003.png" alt="history">
@@ -627,7 +673,7 @@
 			      <a href="#0" class="slidesjs-previous slidesjs-navigation"><img src="img/ic_left.png"/></a>
 			      <a href="#0" class="slidesjs-next slidesjs-navigation"><img src="img/ic_right.png"/></a>
 			    </div>
-			  </div>
+			  </div> -->
 		</div>
 		<div id="portfolio">
 			<h1>Portfolio</h1>
@@ -1230,6 +1276,18 @@
 				  return false;
 			   });
 			});
+
+			var historySwiper = new Swiper('.swiper-container', {
+				autoHeight: true,
+				loop: true
+			}); 
+			$('.slidesjs-next').on('click', function(e) {
+				historySwiper.slideNext();
+			});
+
+			$('.slidesjs-previous').on('click', function(e) {
+				historySwiper.slidePrev();
+			});	    	
 	</script>
 	</body>
 </html>
